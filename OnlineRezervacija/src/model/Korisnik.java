@@ -7,9 +7,19 @@ public class Korisnik {
 	private String Prezime;
 	private String Email;
 	private String Telefon;
+	private String Password;
 	
 	public Korisnik(){
 		super();
+	}
+	
+	public Korisnik(String Ime, String Prezime, String Email, String Telefon, String Password){
+		this.Ime=Ime;
+		this.Prezime=Prezime;
+		this.Email=Email;
+		this.Telefon=Telefon;
+		this.setPassword(Password);
+
 	}
 	
 	public int getIDKorisnik() {
@@ -41,6 +51,14 @@ public class Korisnik {
 	}
 	public void setTelefon(String telefon) {
 		Telefon = telefon;
+	}
+
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
 	}
 	
 }
