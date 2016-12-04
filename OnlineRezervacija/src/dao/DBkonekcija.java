@@ -5,8 +5,9 @@ import java.sql.SQLException;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.sql.DataSource;
 
-import org.apache.tomcat.jdbc.pool.DataSource;
+
 
 public class DBkonekcija implements AutoCloseable {
 	protected Connection konekcija;
@@ -14,7 +15,7 @@ public class DBkonekcija implements AutoCloseable {
 	public DBkonekcija(){
 		try{
 			InitialContext context=new InitialContext();
-			DataSource dataSource=(DataSource) context.lookup("java:/comp/env/jdbc/OnlineRezervacija");
+			DataSource dataSource= (DataSource)context.lookup("java:/comp/env/jdbc/OnlineRezervacija");
 			konekcija = dataSource.getConnection();
 		}
 		catch(NamingException e){

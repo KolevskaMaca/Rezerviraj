@@ -17,13 +17,15 @@ private int uspesnaRegistracija;
 				DBkonekcija db=new DBkonekcija();
 				Connection konekcija = db.getConnection();) {
 			System.out.println("Konekcija Uspesna");
-			PreparedStatement preparedStatement = konekcija
-					.prepareStatement("insert into Korisnik(Ime,Prezime,Email,Telefon,Password) values (?,?,?,?,?)");
+			PreparedStatement preparedStatement = konekcija.prepareStatement("insert into OnlineRezervacija.dbo.Korisnik(Ime, Prezime, Email, Telefon, Password) values (?,?,?,?,?)");
 			preparedStatement.setString(1, korisnik.getIme());
 			preparedStatement.setString(2, korisnik.getPrezime());
 			preparedStatement.setString(3, korisnik.getEmail());
 			preparedStatement.setString(4, korisnik.getTelefon());
 			preparedStatement.setString(5, korisnik.getPassword());
+			
+			uspesnaRegistracija=preparedStatement.executeUpdate();
+		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

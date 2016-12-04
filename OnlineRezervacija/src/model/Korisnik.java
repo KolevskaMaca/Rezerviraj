@@ -14,13 +14,24 @@ public class Korisnik {
 	}
 	
 	public Korisnik(String Ime, String Prezime, String Email, String Telefon, String Password){
+		super();
 		this.Ime=Ime;
 		this.Prezime=Prezime;
 		this.Email=Email;
 		this.Telefon=Telefon;
-		this.setPassword(Password);
+		this.Password=Password;
 
 	}
+	public Korisnik(int IDKorisnik, String Ime, String Prezime, String Email, String Telefon, String Password){
+		this.IDKorisnik=IDKorisnik;
+		this.Ime=Ime;
+		this.Prezime=Prezime;
+		this.Email=Email;
+		this.Telefon=Telefon;
+		this.Password=Password;
+
+	}
+	
 	
 	public int getIDKorisnik() {
 		return IDKorisnik;

@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Text Input Control</title>
 </head>
 <body>
-<form role="form" method="post" action="Registracija" >
+<form role="form" method="get" action="Registracija" >
 Ime:  <input type="text" name="ime" id="ime"/>
 <br>
 Prezime:  <input type="text" name="prezime" id="prezime" />
