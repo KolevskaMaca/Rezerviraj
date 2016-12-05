@@ -4,7 +4,7 @@
 <head>
 <title>Text Input Control</title>
 </head>
-<body>
+<body style="background: #f76a6a">
 <form role="form" method="get" action="Registracija" >
 Ime:  <input type="text" name="ime" id="ime"/>
 <br>

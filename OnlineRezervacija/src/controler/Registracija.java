@@ -39,7 +39,7 @@ public class Registracija extends HttpServlet {
 				request.getParameter("telefon"),request.getParameter("password"));
 			RegistracijaService registracijaService = new RegistracijaService(korisnik);
 			if(registracijaService.uspesna()){
-			response.sendRedirect("index.html");
+			response.sendRedirect("login.jsp");
 		}else{
 			request.setAttribute("Greska", "Neuspesna Registracija,Obidi se povtorno");
 		request.getRequestDispatcher("registracija.jsp").forward(request, response);
@@ -73,7 +73,7 @@ public class Registracija extends HttpServlet {
 			request.getParameter("telefon"),request.getParameter("password"));
 		RegistracijaService registracijaService = new RegistracijaService(korisnik);
 		if(registracijaService.uspesna()){
-		response.sendRedirect("index.html");
+		response.sendRedirect("login.jsp");
 	}else{
 		request.setAttribute("Greska", "Neuspesna Registracija,Obidi se povtorno");
 	request.getRequestDispatcher("registracija.jsp").forward(request, response);
