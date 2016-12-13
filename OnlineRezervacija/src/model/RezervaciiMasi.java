@@ -2,26 +2,20 @@ package model;
 
 public class RezervaciiMasi {
 	private int IDRezervaciMasi;
-	private String VkupnoMasi;
-	private String BrojNaSlobodniMasi;
-	private String BrojNaMasa;
-	
+	private int IDKorisnik;
+	private int BrojNaMasa;
+	private String Ime;
 	
 	public RezervaciiMasi(){
 		super();
 	}
 	
-	public RezervaciiMasi(String VkupnoMasi, String BrojNaSlobodniMasi, String BrojNaMasa) {
-		this.VkupnoMasi=VkupnoMasi;
-		this.BrojNaSlobodniMasi=BrojNaSlobodniMasi;
+	public RezervaciiMasi(String Ime,int BrojNaMasa){
+		this.Ime=Ime;
 		this.BrojNaMasa=BrojNaMasa;
-		
-
 	}
-	public RezervaciiMasi(int IDRezervaciiMasi, String VkupnoMasi, String BrojNaSlobodniMasi, String BrojNaMasa){
-		this.IDRezervaciMasi=IDRezervaciiMasi;
-		this.VkupnoMasi=VkupnoMasi;
-		this.BrojNaSlobodniMasi=BrojNaSlobodniMasi;
+	public RezervaciiMasi(int IDKorisnik,int BrojNaMasa){
+		this.IDKorisnik=IDKorisnik;
 		this.BrojNaMasa=BrojNaMasa;
 	}
 
@@ -33,28 +27,28 @@ public class RezervaciiMasi {
 		IDRezervaciMasi = iDRezervaciMasi;
 	}
 
-	public String getVkupnoMasi() {
-		return VkupnoMasi;
+	public int getIDKorisnik() {
+		return IDKorisnik;
 	}
 
-	public void setVkupnoMasi(String vkupnoMasi) {
-		VkupnoMasi = vkupnoMasi;
+	public void setIDKorisnik(int iDKorisnik) {
+		IDKorisnik = iDKorisnik;
 	}
 
-	public String getBrojNaSlobodniMasi() {
-		return BrojNaSlobodniMasi;
-	}
-
-	public void setBrojNaSlobodniMasi(String brojNaSlobodniMasi) {
-		BrojNaSlobodniMasi = brojNaSlobodniMasi;
-	}
-
-	public String getBrojNaMasa() {
+	public int getBrojNaMasa() {
 		return BrojNaMasa;
 	}
 
-	public void setBrojNaMasa(String brojNaMasa) {
+	public void setBrojNaMasa(int brojNaMasa) {
 		BrojNaMasa = brojNaMasa;
+	}
+
+	public String getIme() {
+		return Ime;
+	}
+
+	public void setIme(String ime) {
+		Ime = ime;
 	}
 
 }

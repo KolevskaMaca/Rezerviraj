@@ -6,23 +6,23 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import dao.LoginDao;
-import model.Korisnik;
-import service.LoginService;
+import org.eclipse.jdt.internal.compiler.parser.ParserBasicInformation;
+
+import dao.RezervirajMasaDao;
+import model.RezervaciiMasi;
 
 /**
- * Servlet implementation class Login
+ * Servlet implementation class RezervirajMasa
  */
-@WebServlet("/Login")
-public class Login extends HttpServlet {
+@WebServlet("/RezervirajMasa")
+public class RezervirajMasa extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public RezervirajMasa() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,32 +31,23 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String Ime=request.getParameter("imeto");
+		String broj=request.getParameter("masi");
+		System.out.println(Ime);
+		System.out.println(broj);
+		//RezervaciiMasi masa=new RezervaciiMasi(Ime,Integer.parseInt(broj));
+		RezervirajMasaDao m=new RezervirajMasaDao();
+		m.vnesuvanje(Ime,Integer.parseInt(broj));
+		//RezervacijaMasaService rezervirajMasa=new RezervacijaMasaService(masa);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		  String email = request.getParameter("email");
-		  String password = request.getParameter("password");
-		  
-		  HttpSession session = request.getSession();
-		  LoginService loginService = new LoginService(email, password);
-		  boolean result = loginService.ProveriVoBaza();
-		    
-		
-		  if(result){
-		   Korisnik korisnik = loginService.ZemiDetali();
-		   session.setAttribute("korisnik", korisnik); 		   
-		   response.sendRedirect("index.jsp");
-		 }else{
-			 request.getRequestDispatcher("login.jsp").forward(request, response);
-		 }
-		  
-		
+		// TODO Auto-generated method stub
+
 	}
 
 }
