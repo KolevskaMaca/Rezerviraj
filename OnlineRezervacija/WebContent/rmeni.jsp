@@ -50,14 +50,16 @@ footer {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
+				<a class="navbar-brand" href="index.jsp">Почетна</a>
 				<a class="navbar-brand" href="rmasa.jsp">Резервирај маса</a> <a
-					class="navbar-brand" href="rsoba.html">Резервирај соба</a> <a
-					class="navbar-brand" href="rmeni.html">Мени</a>
+					class="navbar-brand" href="rsoba.jsp">Резервирај соба</a> <a
+					class="navbar-brand" href="rmeni.jsp">Мени</a>
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="login.jsp"><span
-						class="glyphicon glyphicon-user"></span> Логирај се</a></li>
+				<li><a style='color: #f2f2f2;'>Welcome
+        ${korisnik.getIme()} ${korisnik.getPrezime() }</a></li>
+				
 				<li><a href="registracija.jsp"><span
 						class="glyphicon glyphicon-user"></span> Регистрација</a></li>
 				<li><a href="#"><span
@@ -73,13 +75,27 @@ footer {
 				<div class="panel panel-danger">
 					<div class="panel-heading">МЕНИ</div>
 					<div class="panel-body">
-						<form role="form" action="RezervirajMeni">
-							<select name="topliNapitoci">
-								<c:forEach items="${topliNapitoci}" var="napitoci">
-									<option value="${napitoci.getImeTopliNapitoci }">${napitoci.getImeTopliNapitoci}</option>
+
+ <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Топли напитоци
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Турско кафе</a></li>
+      <li><a href="#">Експресо</a></li>
+      <li><a href="#">Макијато</a></li>
+       <li><a href="#">Топло чоколадо</a></li>
+      <li><a href="#">Нескафе</a></li>
+      <li><a href="#">Капучино</a></li>
+      <li><a href="#">Чај</a></li>
+    </ul>
+  </div>
+						<%-- <form method="post" action="RezervirajMeni">
+							<select id="topliNapitoci" name="topliNapitoci">
+								<c:forEach items='${topliNapitoci}' var="tn">
+									<option value='${tn.getIDTopliNapitoci()}'>${tn.getImeTopliNapitoci()}</option>
 								</c:forEach>
 							</select>
-						</form>
+						</form> --%>
 					</div>
 
 				</div>

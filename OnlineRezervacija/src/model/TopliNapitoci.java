@@ -9,15 +9,17 @@ public class TopliNapitoci {
 		super();
 	}
 	
-	public TopliNapitoci(String ImeTopliNapitoci) {
-		this.ImeTopliNapitoci=ImeTopliNapitoci;
-		
-
-	}
 	public TopliNapitoci(int IDTopliNapitoci, String ImeTopliNapitoci){
 		this.IDTopliNapitoci=IDTopliNapitoci;
 		this.ImeTopliNapitoci=ImeTopliNapitoci;	
 	}
+
+
+	public TopliNapitoci(String ImeTopliNapitoci) {
+		this.ImeTopliNapitoci=ImeTopliNapitoci;
+		
+	}
+
 
 	public int getIDTopliNapitoci() {
 		return IDTopliNapitoci;
@@ -34,5 +36,6 @@ public class TopliNapitoci {
 	public void setImeTopliNapitoci(String imeTopliNapitoci) {
 		ImeTopliNapitoci = imeTopliNapitoci;
 	}
-	
+
+
 }

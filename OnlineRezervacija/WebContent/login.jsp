@@ -13,11 +13,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Логирање</title>
 </head>
-<body style="background: #f76a6a">
+<body style="background: #f2f2f2">
 	<div class="container">    
   
         <div class="row centered-form">
-        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4" style="margin-top:20%;">
         	<div class="panel panel-default">
         		<div class="panel-heading">
 			    		<h3 class="panel-title">Логирајте се тука:</h3>
@@ -38,7 +38,8 @@
 			    			</div>
 			    			
 			    			<input type="submit" value="Потврда" class="btn btn-info btn-block">
-			    		
+			    		<a href="registracija.jsp"><span
+						class="glyphicon glyphicon-user"></span> Регистрација</a>
 			    		</form>
 			    	</div>
 	    		</div>

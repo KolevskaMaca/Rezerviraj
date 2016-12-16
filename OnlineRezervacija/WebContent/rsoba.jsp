@@ -1,7 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Резервирање соба</title>
+  <title>Online Резервација</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -26,12 +29,13 @@
     }
   </style>
 </head>
+<c:set var="korisnik" value="${sessionScope.korisnik}"></c:set>
 <body>
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Online Rezervacija</h1>      
-    <p>Закажи маса, Закажи соба & Избери мени</p>
+    <h1>Online Резервација</h1>      
+    <p>Резервирај маса, Резервирај соба & Избери мени</p>
   </div>
 </div>
 
@@ -43,13 +47,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
+      <a class="navbar-brand" href="index.jsp">Почетна</a>
       <a class="navbar-brand" href="rmasa.jsp">Резервирај маса</a>
-      <a class="navbar-brand" href="rsoba.html">Резервирај соба</a>
-      <a class="navbar-brand" href="rmeni.html">Мени</a>
+      <a class="navbar-brand" href="rsoba.jsp">Резервирај соба</a>
+      <a class="navbar-brand" href="rmeni.jsp">Мени</a>
     </div>
     
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="login.jsp"><span class="glyphicon glyphicon-user"></span> Логирај се</a></li>
+     <li><a style='color: #f2f2f2;'>Welcome
+        ${korisnik.getIme()} ${korisnik.getPrezime() }</a></li>
+				
         <li><a href="registracija.jsp"><span class="glyphicon glyphicon-user"></span> Регистрација</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Резервирај</a></li>
       </ul>

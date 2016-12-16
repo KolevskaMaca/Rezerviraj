@@ -39,7 +39,7 @@ public class RezervirajMasa extends HttpServlet {
 		RezervirajMasaDao m=new RezervirajMasaDao();
 		m.vnesuvanje(Ime,Integer.parseInt(broj));
 		//RezervacijaMasaService rezervirajMasa=new RezervacijaMasaService(masa);
-		
+		 response.sendRedirect("rmasa.jsp");
 	}
 
 	/**

@@ -50,7 +50,8 @@ public class Login extends HttpServlet {
 		
 		  if(result){
 		   Korisnik korisnik = loginService.ZemiDetali();
-		   session.setAttribute("korisnik", korisnik); 		   
+		   session.setAttribute("korisnik", korisnik); 	
+		 
 		   response.sendRedirect("index.jsp");
 		 }else{
 			 request.getRequestDispatcher("login.jsp").forward(request, response);

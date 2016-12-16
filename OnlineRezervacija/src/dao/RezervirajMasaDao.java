@@ -29,5 +29,21 @@ public class RezervirajMasaDao {
 		}
 
 	}
+	public void proverka(String Ime){
+		try (
+			DBkonekcija db=new DBkonekcija();
+			Connection konekcija = db.getConnection();) {
+		System.out.println("Konekcija Uspesna");
+		PreparedStatement preparedStatement = konekcija.prepareStatement("select BrojNaMasa from OnlineRezervacija.dbo.RezervaciiMasi");
+				
+		preparedStatement.executeUpdate();
+	
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
+		
+	}
 
 }

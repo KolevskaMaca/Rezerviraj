@@ -22,6 +22,8 @@
 
 /* Remove the jumbotron's default bottom margin */
 .jumbotron {
+	
+	
 	margin-bottom: 0;
 }
 
@@ -58,14 +60,15 @@ footer {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
+				<a class="navbar-brand" href="index.jsp">Почетна</a>
 				<a class="navbar-brand" href="rmasa.jsp">Резервирај маса</a> <a
-					class="navbar-brand" href="rsoba.html">Резервирај соба</a> <a
+					class="navbar-brand" href="rsoba.jsp">Резервирај соба</a> <a
 					class="navbar-brand" href="rmeni.jsp">Мени</a>
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="login.jsp"><span
-						class="glyphicon glyphicon-user"></span> Логирај се</a></li>
+				<li><a style='color: #f2f2f2;'>Welcome
+        ${korisnik.getIme()} ${korisnik.getPrezime() }</a></li>
 				<li><a href="registracija.jsp"><span
 						class="glyphicon glyphicon-user"></span> Регистрација</a></li>
 				<li><a href="#"><span
@@ -114,11 +117,14 @@ footer {
 	</div>
 	<br>
 	<footer class="container-fluid text-center">
-		<p>Online Rezervacija</p>
+		
 		<form class="form-inline">
-			Додај забелешки: <input type="email" class="form-control" size="50"
+			Додај забелешки:  
+			 <input type="email" class="form-control" size="50"
 				placeholder="Email Address">
-			<button type="button" class="btn btn-danger">Испрати</button>
+				 <input type="text" class="form-control" size="50"
+				placeholder="text">
+			<button type="button" class="btn btn-danger" value="Send eMail" onclick="window.location.href='mailto:me@anydomainname.com'">Испрати</button>
 		</form>
 	</footer>
 
