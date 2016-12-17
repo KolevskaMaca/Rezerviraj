@@ -1,6 +1,8 @@
 package controler;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +13,7 @@ import org.eclipse.jdt.internal.compiler.parser.ParserBasicInformation;
 
 import dao.RezervirajMasaDao;
 import model.RezervaciiMasi;
+import model.TopliNapitoci;
 
 /**
  * Servlet implementation class RezervirajMasa
@@ -36,10 +39,13 @@ public class RezervirajMasa extends HttpServlet {
 		System.out.println(Ime);
 		System.out.println(broj);
 		//RezervaciiMasi masa=new RezervaciiMasi(Ime,Integer.parseInt(broj));
-		RezervirajMasaDao m=new RezervirajMasaDao();
+		RezervirajMasaDao m = new RezervirajMasaDao();
+
 		m.vnesuvanje(Ime,Integer.parseInt(broj));
 		//RezervacijaMasaService rezervirajMasa=new RezervacijaMasaService(masa);
-		 response.sendRedirect("rmasa.jsp");
+		
+
+		 response.sendRedirect("Masi");
 	}
 
 	/**

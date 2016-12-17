@@ -48,9 +48,10 @@ footer {
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Резервирај маса</a> <a
-					class="navbar-brand" href="#">Резервирај соба</a> <a
-					class="navbar-brand" href="#">Мени</a>
+				<a class="navbar-brand" href="index.jsp">Почетна</a>
+				<a class="navbar-brand" href="Masi">Резервирај маса</a> <a
+					class="navbar-brand" href="rsoba.jsp">Резервирај соба</a> <a
+					class="navbar-brand" href="RezervirajMeni">Мени</a>
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">

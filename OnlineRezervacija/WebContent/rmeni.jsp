@@ -51,9 +51,9 @@ footer {
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="index.jsp">Почетна</a>
-				<a class="navbar-brand" href="rmasa.jsp">Резервирај маса</a> <a
+				<a class="navbar-brand" href="Masi">Резервирај маса</a> <a
 					class="navbar-brand" href="rsoba.jsp">Резервирај соба</a> <a
-					class="navbar-brand" href="rmeni.jsp">Мени</a>
+					class="navbar-brand" href="RezervirajMeni">Мени</a>
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">
@@ -76,7 +76,7 @@ footer {
 					<div class="panel-heading">МЕНИ</div>
 					<div class="panel-body">
 
- <div class="dropdown">
+ <!-- <div class="dropdown">
     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Топли напитоци
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
@@ -88,14 +88,14 @@ footer {
       <li><a href="#">Капучино</a></li>
       <li><a href="#">Чај</a></li>
     </ul>
-  </div>
-						<%-- <form method="post" action="RezervirajMeni">
+  </div> -->
+						 <form method="post" action="RezervirajMeni">
 							<select id="topliNapitoci" name="topliNapitoci">
 								<c:forEach items='${topliNapitoci}' var="tn">
 									<option value='${tn.getIDTopliNapitoci()}'>${tn.getImeTopliNapitoci()}</option>
 								</c:forEach>
 							</select>
-						</form> --%>
+						</form> 
 					</div>
 
 				</div>
