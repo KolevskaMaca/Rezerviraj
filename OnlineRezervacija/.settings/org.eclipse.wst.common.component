@@ -2,6 +2,7 @@
     <wb-module deploy-name="OnlineRezervacija">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/WebContent/WEB-INF"/>
         <property name="java-output-path" value="/OnlineRezervacija/build/classes"/>
         <property name="context-root" value="OnlineRezervacija"/>
     </wb-module>

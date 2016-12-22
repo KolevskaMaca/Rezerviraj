@@ -6,32 +6,28 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-
-import model.RezervaciiMasi;
-import model.TopliNapitoci;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 public class RezervirajMasaDao {
-	// private static Logger logger =
-	// LogManager.getLogger(RezervirajMasaDao.class);
+	private static Logger logger = LogManager.getLogger(RezervirajMasaDao.class);
+
 	public void vnesuvanje(String Ime, int broj) {
 
-		// logger.info("this is a sample log message.");
+		logger.info("Pocetok na vnesuvanjeto za rezervacija na masa.");
 		try (DBkonekcija db = new DBkonekcija(); Connection konekcija = db.getConnection();) {
 			System.out.println("Konekcija Uspesna");
 			PreparedStatement preparedStatement = konekcija.prepareStatement(
 					"insert into OnlineRezervacija.dbo.RezervaciiMasi(IDKorisnik,BrojNaMasa) values ((select IDKorisnik from OnlineRezervacija.dbo.Korisnik where Ime=?),?)");
 			preparedStatement.setString(1, Ime);
 			preparedStatement.setInt(2, broj);
-			// preparedStatement.setInt(1, rezervaciiMasi.getIDKorisnik());
-			// preparedStatement.setInt(2, rezervaciiMasi.getBrojNaMasa());
 
 			preparedStatement.executeUpdate();
-
+			logger.info("Zavrseno vnesuvanjeto za rezervacija na masa");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			logger.error("Greska pri vnesuvanjeto za rezervacija na masata.");
 		}
 
 	}
@@ -47,9 +43,6 @@ public class RezervirajMasaDao {
 			while (resultSet.next()) {
 				masicki.add(resultSet.getInt("BrojNaMasa"));
 			}
-			// for(int i = 0; i < masicki.size(); i++) {
-			// System.out.println(masicki.get(i).getBrojNaMasa());
-			// }
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

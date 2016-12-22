@@ -11,14 +11,15 @@ public class Meni {
 	private int IDSkara;
 	private int IDDesert;
 	private int IDPici;
+	private String Ime;
 	
 	public Meni(){
 		super();
 	}
 	
-	public Meni(int IDMeni, int IDTopliNapitoci, int IDPijalok, int IDSalati, int IDSendvici, int IDSkara, int IDDesert, int IDPici){
+	public Meni(String Ime, int IDTopliNapitoci, int IDPijalok, int IDSalati, int IDSendvici, int IDSkara, int IDDesert, int IDPici){
 		super();
-		this.IDMeni=IDMeni;
+		this.Ime=Ime;
 		this.IDTopliNapitoci=IDTopliNapitoci;
 		this.IDPijalok=IDPijalok;
 		this.IDSalati=IDSalati;
@@ -101,6 +102,14 @@ public class Meni {
 
 	public void setIDPici(int iDPici) {
 		IDPici = iDPici;
+	}
+
+	public String getIme() {
+		return Ime;
+	}
+
+	public void setIme(String ime) {
+		Ime = ime;
 	}
 	
 }

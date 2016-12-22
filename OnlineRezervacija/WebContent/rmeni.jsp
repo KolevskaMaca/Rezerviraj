@@ -95,6 +95,40 @@ footer {
 									<option value='${tn.getIDTopliNapitoci()}'>${tn.getImeTopliNapitoci()}</option>
 								</c:forEach>
 							</select>
+							<br>
+							<select id="skaraobj" name="skaraobj">
+								<c:forEach items='${skaraobj}' var="Skara">
+									<option value='${Skara.getIDSkara()}'>${Skara.getImeSkara()}</option>
+								</c:forEach>
+							</select>	<br>
+							<select id="sendviciobj" name="sendviciobj">
+								<c:forEach items='${sendviciobj}' var="Sendvici">
+									<option value='${Sendvici.getIDSendvici()}'>${Sendvici.getImeSendvici()}</option>
+								</c:forEach>
+							</select>	<br>
+							<select id="salatiobj" name="salatiobj">
+								<c:forEach items='${salatiobj}' var="Salati">
+									<option value='${Salati.getIDSalati()}'>${Salati.getImeSalati()}</option>
+								</c:forEach>
+							</select>	<br>
+							<select id="pijalokobj" name="pijalokobj">
+								<c:forEach items='${pijalokobj}' var="Pijalok">
+									<option value='${Pijalok.getIDPijalok()}'>${Pijalok.getImePijalok()}</option>
+								</c:forEach>
+							</select>	<br>
+							<select id="piciobj" name="piciobj">
+								<c:forEach items='${piciobj}' var="Pici">
+									<option value='${Pici.getIDPici()}'>${Pici.getImePici()}</option>
+								</c:forEach>
+							</select>	<br>
+							<select id="desertobj" name="desertobj">
+								<c:forEach items='${desertobj}' var="Desert">
+									<option value='${Desert.getIDDesert()}'>${Desert.getImeDesert()}</option>
+								</c:forEach>
+							</select>	<br>
+								<input style="display: none;" type="text" name="ime"
+        value="${korisnik.getIme()}">
+								<input type="submit" value="Submit" />
 						</form> 
 					</div>
 

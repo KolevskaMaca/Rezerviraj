@@ -3,16 +3,20 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import model.Korisnik;
 
 public class RegistracijaDao {
+	private static Logger logger =	LogManager.getLogger(RezervirajMasaDao.class);
 private int uspesnaRegistracija;
 	public RegistracijaDao() {
 
 	}
 
 	public void vnesuvanje(Korisnik korisnik) {
-
+logger.info("Vnesuvanje vo baza pri registracija");
 		try (
 				DBkonekcija db=new DBkonekcija();
 				Connection konekcija = db.getConnection();) {
@@ -25,10 +29,11 @@ private int uspesnaRegistracija;
 			preparedStatement.setString(5, korisnik.getPassword());
 			
 			uspesnaRegistracija=preparedStatement.executeUpdate();
-		
+		logger.info("Korisnikot e registriran.");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			logger.error("Greska pri vnesuvanjeto vo bazata.");
 		}
 
 	}

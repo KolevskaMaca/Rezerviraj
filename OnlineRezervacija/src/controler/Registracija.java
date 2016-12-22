@@ -51,24 +51,7 @@ public class Registracija extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*Korisnik korisnik=new Korisnik();
-		try(
-				DBkonekcija db = new DBkonekcija();
-				Connection konekcija = db.getConnection();){
-			System.out.println("Konekcija Uspesna");
-			PreparedStatement preparedStatement = konekcija.prepareStatement("insert into Korisnik(Ime, Prezime, Email, Telefon, Password) values ((?),(?),?,?,?)");
-			preparedStatement.setString(1, "A");
-			preparedStatement.setString(2, "A");
-			preparedStatement.setString(3, korisnik.getEmail());
-			preparedStatement.setString(4, korisnik.getTelefon());
-			preparedStatement.setString(5, korisnik.getPassword());
 		
-			
-			preparedStatement.executeUpdate();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
 		Korisnik korisnik=new Korisnik(request.getParameter("ime"),request.getParameter("prezime"),request.getParameter("email"),
 			request.getParameter("telefon"),request.getParameter("password"));
 		RegistracijaService registracijaService = new RegistracijaService(korisnik);
