@@ -89,7 +89,7 @@ public class RezervirajMeni extends HttpServlet {
 		MeniDao meniDao=new MeniDao();
 		meniDao.vnesuvanje(ime,Integer.parseInt(tn),Integer.parseInt(sk),Integer.parseInt(sl),Integer.parseInt(pk),Integer.parseInt(pc),Integer.parseInt(dt), Integer.parseInt(sn));
 		
-		
+		response.sendRedirect("RezervirajMeni");
 		
 	}
 
