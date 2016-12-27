@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import model.Desert;
 import model.Korisnik;
 import model.Meni;
@@ -17,10 +20,11 @@ import model.Skara;
 import model.TopliNapitoci;
 
 public class MeniDao {
+	private static Logger logger =	LogManager.getLogger(MeniDao.class);
 	public List<TopliNapitoci> listajNapitoci() {
 		List<TopliNapitoci> topliNapitoci = new ArrayList<>();
 		try (DBkonekcija db = new DBkonekcija(); Connection konekcija = db.getConnection();) {
-			
+			logger.info("gi zema site topli napitoci od bazata");
 			PreparedStatement preparedStatement = konekcija
 					.prepareStatement("select * from OnlineRezervacija.dbo.TopliNapitoci");
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -37,14 +41,16 @@ public class MeniDao {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			logger.error("Greska vo MeniDao vo topli napitoci");
 		}
 		return topliNapitoci;
 	}
 	
 	public List<Skara> listajSkara() {
+		
 		List<Skara> skara = new ArrayList<>();
 		try (DBkonekcija db = new DBkonekcija(); Connection konekcija = db.getConnection();) {
-			
+			logger.info("Gi zema od bazata od Skara");
 			PreparedStatement preparedStatement = konekcija
 					.prepareStatement("select * from OnlineRezervacija.dbo.Skara");
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -61,13 +67,14 @@ public class MeniDao {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			logger.error("Greska vo Meni Dao vo Skara");
 		}
 		return skara;
 	}
 	public List<Sendvici> listajSendvici() {
 		List<Sendvici> sendvici = new ArrayList<>();
 		try (DBkonekcija db = new DBkonekcija(); Connection konekcija = db.getConnection();) {
-			
+			logger.info("Se zemaat sendivicite od bazata");
 			PreparedStatement preparedStatement = konekcija
 					.prepareStatement("select * from OnlineRezervacija.dbo.Sendvici");
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -84,13 +91,14 @@ public class MeniDao {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			logger.error("Greska vo MeniDao vo Sendvici");
 		}
 		return sendvici;
 	}
 	public List<Salati> listajSalati() {
 		List<Salati> salati = new ArrayList<>();
 		try (DBkonekcija db = new DBkonekcija(); Connection konekcija = db.getConnection();) {
-			
+			logger.info("Gi zema Salatite od bazata");
 			PreparedStatement preparedStatement = konekcija
 					.prepareStatement("select * from OnlineRezervacija.dbo.Salati");
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -107,6 +115,7 @@ public class MeniDao {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		return salati;
 	}
